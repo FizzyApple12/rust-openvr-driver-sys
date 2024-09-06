@@ -1,0 +1,27 @@
+[package]
+name = "openvr_driver_sys"
+version = "1.0.0"
+edition = "2021"
+
+exclude = [
+    "openvr/samples/*",
+    "openvr/bin/*",
+    "openvr/lib/*",
+    "openvr/controller_callouts/*",
+]
+build = "build.rs"
+
+[badges]
+maintenance = { status = "passively-maintained" }
+
+[build-dependencies]
+cmake = "0.1"
+bindgen = { version = "0.70.1", optional = true }
+
+[lib]
+name = "openvr_driver_sys"
+path = "lib.rs"
+
+[features]
+default = []
+buildtime_bindgen = ["bindgen"]
