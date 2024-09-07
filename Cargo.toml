@@ -15,13 +15,15 @@ build = "build.rs"
 maintenance = { status = "passively-maintained" }
 
 [build-dependencies]
-cmake = "0.1"
-bindgen = { version = "0.70.1", optional = true }
+cmake = "0.1.51"
+cxx-build = "1.0.128"
 
 [lib]
 name = "openvr_driver_sys"
-path = "lib.rs"
+path = "src/lib.rs"
 
 [features]
 default = []
-buildtime_bindgen = ["bindgen"]
+
+[dependencies]
+cxx = "1.0.128"
